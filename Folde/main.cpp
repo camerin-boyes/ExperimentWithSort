@@ -13,7 +13,6 @@ void bubbleSort(int *, int);
 void mergeSort(int *, int); 
 
 int main(int argc, char *argv[]) {
-  cout << "HI" << endl;
   if (argc < 2) return 0; // too few command line arguments
 
   int num_int = stoi(argv[1]);
@@ -25,17 +24,18 @@ int main(int argc, char *argv[]) {
     my_array[ii] = rand() % MAX_RN;
 
 // if we're working with only a few numbers, print to console
-  if (num_int < 12) {
+  if (num_int < 20) {
     cout << "input data: ";
     for (int ii=0; ii<num_int; ii++) cout << my_array[ii] << " ";
     cout << endl;
   }
 
-  // selectionSort(my_array, num_int); cout << "Selection sort!" << endl;
+  //selectionSort(my_array, num_int); cout << "Selection sort!" << endl;
   insertionSort(my_array, num_int); cout << "Insertion sort!" << endl;
+  //bubbleSort(my_array, num_int); cout << "Bubble sort!" << endl;
 
 // if we're working with only a few numbers, print to console after sorting
-  if (num_int < 12) {
+  if (num_int < 20) {
     cout << "sorted data: ";
     for (int ii=0; ii<num_int; ii++) cout << my_array[ii] << " ";
     cout << endl;

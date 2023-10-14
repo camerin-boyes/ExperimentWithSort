@@ -33,7 +33,24 @@ void selectionSort(int *array, int n) {
 }
 
 void bubbleSort(int *array, int n) {
+  int i = n;
+  int has_swapped = 1;
+  while (has_swapped > 0) {
+    has_swapped = 0;
+    for (int j = 0; j < i-1; j++) {
+      if (array[j] > array[j+1]) {
+        std::swap(array[j+1],array[j]);
+        has_swapped++;
+      }
+    }
+    i--;
+  }
 }
 
 void mergeSort(int *array, int n) {
+  int mid = n/2;
+  if (mid == 0) return;
+
+  //mergeSort(a,mid); 
+  //mergeSort(array[],)
 }
