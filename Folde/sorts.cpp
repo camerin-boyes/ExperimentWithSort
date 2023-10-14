@@ -4,6 +4,17 @@
 using namespace std;
 
 void insertionSort(int *array, int n) {
+ int i = 1;
+ int j = 1;
+ while (i != n) {
+  while (array[j-1] > array[j]) {
+    swap(array[j-1], array[j]);
+    j--;
+  }
+  i++;
+  j = i;
+ }
+
 }
 
 void selectionSort(int *array, int n) {
