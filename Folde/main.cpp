@@ -11,6 +11,7 @@ void insertionSort(int *, int);
 void selectionSort(int *, int); 
 void bubbleSort(int *, int); 
 void mergeSort(int *, int); 
+void merge(int *, int, int);
 
 int main(int argc, char *argv[]) {
   if (argc < 2) return 0; // too few command line arguments

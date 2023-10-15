@@ -48,9 +48,43 @@ void bubbleSort(int *array, int n) {
 }
 
 void mergeSort(int *array, int n) {
-  int mid = n/2;
-  if (mid == 0) return;
+  merge(array, 0, n-1);
 
-  //mergeSort(a,mid); 
-  //mergeSort(array[],)
+}
+
+void merge(int *array, int left, int right) {
+    int mid = right/2;
+    int array_indexer = left;
+    int L_array_position = left;
+    int R_array_position = mid + 1;
+        int *array_duplicate = array;
+  if (left < right) {
+    merge(array, left, right/2); 
+    merge(array, right/2+1, right);
+
+
+    while ((L_array_position <= mid) && (R_array_position <= right)) {
+      if (array_duplicate[L_array_position] < array_duplicate[R_array_position]) {
+        array[array_indexer] = array_duplicate[L_array_position];
+        L_array_position++;
+      } else {
+        array[array_indexer] = array_duplicate[R_array_position];
+        R_array_position++;
+      }
+
+      array_indexer++;
+    }
+    while (L_array_position <= mid) {
+      array[array_indexer] = array_duplicate[L_array_position];
+      L_array_position++;
+      array_indexer++;
+    }
+    while (R_array_position <= right) { 
+      array[array_indexer] = array_duplicate[R_array_position];
+      R_array_position++;
+      array_indexer++;
+    }
+
+  }
+
 }
